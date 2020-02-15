@@ -3,8 +3,8 @@ import numpy as np
 
 from Util import Util
 
-file_path = "../data/resnet/resnet_split120_timeline.csv"
-file_with_headers_path = "../data/resnet/resnet_split120_timeline_withheaders.csv"
+file_path = "../data/resnet/resnet_split60_timeline.csv"
+file_with_headers_path = "../data/resnet/resnet_split60_timeline_withheader.csv"
 
 pdf = Util.load_data_as_pdf(file_name=file_with_headers_path)
 npy = Util.load_data_as_numpy(file_name=file_path)
@@ -34,14 +34,13 @@ full_str = ""
 len_data = len(datetime_vals_npy)
 main_index = 0
 i = 0
-filter_indices = [0, 1,2,5, 30, 31, 32, 33, 34, 35, 88, 89, 90, 116, 119, 120 ]
+filter_indices = [0, 1, 2, 5, 15, 16, 17, 43, 44, 45, 55, 56, 57, 58, 59, 60]
 for i, datapoint in enumerate(datetime_vals_npy):
 
     values = "["
     item_count = len(datapoint)
     split_id = str(datapoint[0] - 1)
-    #print("Split Id: ", split_id)
-
+    # print("Split Id: ", split_id)
 
     for j, dataitem in enumerate(datapoint[1:]):
         # print(i, j, dataitem)
@@ -59,4 +58,3 @@ for i, datapoint in enumerate(datetime_vals_npy):
                         end_date_str + "],"
             if i in filter_indices:
                 print(statement)
-
