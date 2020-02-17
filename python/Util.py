@@ -41,11 +41,11 @@ class Util:
         time_sub_info = time_info.split(".")
         hh_mm_ss = time_sub_info[0].split(":")
         microseconds = time_sub_info[1]
-        milliseconds = str(int(float(microseconds) / 1000.0))
+        milliseconds = str((float(microseconds) / 1000.0))
         hour = hh_mm_ss[0]
         minutes = hh_mm_ss[1]
         seconds = hh_mm_ss[2]
         info_str = year + "," + month + "," + day + "," + hour + "," \
                                                                  "" + minutes + "," + seconds + "," + \
-                   microseconds
+                   milliseconds
         return info_str
